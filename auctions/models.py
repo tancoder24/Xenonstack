@@ -41,4 +41,10 @@ class Watchlater(models.Model):
     username = models.CharField(max_length=100)
     watchlater_listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="relate_watchlater")
 
+class Contact_us(models.Model):
+    full_name = models.CharField(max_length=64)
+    email = models.CharField(max_length=64)
+    message = models.TextField()
+
+    
     

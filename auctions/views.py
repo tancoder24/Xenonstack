@@ -251,3 +251,31 @@ def watchlater(request):
         return render(request, "auctions/index.html",{
             "listing" : l 
         })
+
+# contact us
+def contact_us(request):
+    pass
+    # if request.method == "POST":
+    #     username = request.POST["username"]
+    #     email = request.POST["email"]
+
+    #     # Ensure password matches confirmation
+    #     password = request.POST["password"]
+    #     confirmation = request.POST["confirmation"]
+    #     if password != confirmation:
+    #         return render(request, "auctions/register.html", {
+    #             "message": "Passwords must match."
+    #         })
+
+    #     # Attempt to create new user
+    #     try:
+    #         user = User.objects.create_user(username, email, password)
+    #         user.save()
+    #     except IntegrityError:
+    #         return render(request, "auctions/register.html", {
+    #             "message": "Username already taken."
+    #         })
+    #     login(request, user)
+    #     return HttpResponseRedirect(reverse("index"))
+    # else:
+    #     return render(request, "auctions/register.html")

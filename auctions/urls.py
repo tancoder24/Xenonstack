@@ -13,4 +13,5 @@ urlpatterns = [
     path("closed_listing/<str:name>", views.closed_listing, name = "closed_listing"),
     path("categories", views.categories, name = "categories"),
     path("watchlater", views.watchlater, name = "watchlater"),
+    path("contact_us", views.contact_us, name = "contact_us"),
 ]
