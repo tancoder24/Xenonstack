@@ -254,7 +254,6 @@ def watchlater(request):
 
 # contact us
 def contact_us(request):
-    pass
     # if request.method == "POST":
     #     username = request.POST["username"]
     #     email = request.POST["email"]
