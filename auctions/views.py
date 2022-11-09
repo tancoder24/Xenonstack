@@ -9,7 +9,7 @@ import urllib.request,os
 from django import forms
 from django.contrib.auth.decorators import login_required
 
-from .models import User, Listing, Bid, Comment, Watchlater
+from .models import User, Listing, Bid, Comment, Watchlater, Contact_us
 
 
 # Index page definations
@@ -254,27 +254,16 @@ def watchlater(request):
 
 # contact us
 def contact_us(request):
-    # if request.method == "POST":
-    #     username = request.POST["username"]
-    #     email = request.POST["email"]
+    if request.method == "POST":
+        # return HttpResponse("Submitted")
+        full_name = request.POST["fullName"]
+        email = request.POST["email"]
+        message = request.POST["message"]
 
-    #     # Ensure password matches confirmation
-    #     password = request.POST["password"]
-    #     confirmation = request.POST["confirmation"]
-    #     if password != confirmation:
-    #         return render(request, "auctions/register.html", {
-    #             "message": "Passwords must match."
-    #         })
+        contact = Contact_us(full_name = full_name, email= email, message = message)
+        contact.save()    
 
-    #     # Attempt to create new user
-    #     try:
-    #         user = User.objects.create_user(username, email, password)
-    #         user.save()
-    #     except IntegrityError:
-    #         return render(request, "auctions/register.html", {
-    #             "message": "Username already taken."
-    #         })
-    #     login(request, user)
-    #     return HttpResponseRedirect(reverse("index"))
-    # else:
-    return render(request, "auctions/contact.html")
+        return HttpResponseRedirect(reverse("index"))
+    
+    else:
+        return render(request, "auctions/contact.html")
