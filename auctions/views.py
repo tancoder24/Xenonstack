@@ -278,4 +278,4 @@ def contact_us(request):
     #     login(request, user)
     #     return HttpResponseRedirect(reverse("index"))
     # else:
-    #     return render(request, "auctions/register.html")
+    return render(request, "auctions/contact.html")
